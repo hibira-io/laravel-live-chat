@@ -1,0 +1,72 @@
+{
+    "name": "hibira-io/laravel-live-chat",
+    "description": "Hibira Live Chat for Laravel: one Blade component or middleware puts the chat on your site, with your signed-in users verified",
+    "keywords": [
+        "laravel",
+        "live-chat",
+        "chat-widget",
+        "customer-support",
+        "helpdesk",
+        "ai-chatbot",
+        "blade",
+        "livewire",
+        "inertia",
+        "hibira"
+    ],
+    "homepage": "https://chat.hibira.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hibira",
+            "homepage": "https://hibira.io"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/hibira-io/laravel-live-chat/issues",
+        "docs": "https://github.com/hibira-io/laravel-live-chat#readme",
+        "email": "support@hibira.io"
+    },
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.2|^8.0",
+        "illuminate/console": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/http": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/view": "^10.0|^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hibira\\LiveChat\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hibira\\LiveChat\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hibira\\LiveChat\\LiveChatServiceProvider"
+            ],
+            "aliases": {
+                "HibiraLiveChat": "Hibira\\LiveChat\\Facades\\LiveChat"
+            }
+        },
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
