@@ -19,8 +19,8 @@ composer require hibira-io/laravel-live-chat
 php artisan hibira:live-chat --workspace=ws_your_workspace_id
 ```
 
-Find the workspace ID under Settings › Widget on
-[chat.hibira.io](https://chat.hibira.io), and add your site's address
+Find the workspace ID under
+[Settings › Widget](https://hibira.io/portal/live-chat/widget) in Hibira Live Chat, and add your site's address
 (`APP_URL`) under Sites there. The command writes the `.env` keys and checks
 that your site may show the chat.
 
