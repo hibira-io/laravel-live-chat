@@ -2,7 +2,8 @@
 
 return [
 
-    // Your workspace ID (ws_…), from Settings › Widget on chat.hibira.io.
+    // Your workspace ID (ws_…), from Settings › Widget in Hibira Live Chat
+    // (https://hibira.io/portal/live-chat/widget).
     'workspace' => env('HIBIRA_LIVECHAT_WORKSPACE'),
 
     // The identity secret (lcid_…) from Settings › Widget › Verified

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 class LiveChatCommand extends Command
 {
     protected $signature = 'hibira:live-chat
-        {--workspace= : Your workspace ID (ws_…) from Settings › Widget on chat.hibira.io}
+        {--workspace= : Your workspace ID (ws_…) from Settings › Widget in Hibira Live Chat}
         {--check : Only check the setup}';
 
     protected $description = 'Set up Hibira Live Chat: .env keys, then check that this site may show the chat';
@@ -20,7 +20,7 @@ class LiveChatCommand extends Command
         if (! $this->option('check')) {
             $workspace = (string) $this->option('workspace');
             if ($workspace !== '' && ! LiveChat::validWorkspace($workspace)) {
-                $this->error("$workspace is not a workspace ID. It starts with ws_; find it in Settings › Widget on chat.hibira.io.");
+                $this->error("$workspace is not a workspace ID. It starts with ws_; find it in Settings › Widget: https://hibira.io/portal/live-chat/widget.");
 
                 return self::FAILURE;
             }
@@ -47,7 +47,7 @@ class LiveChatCommand extends Command
         $workspace = $chat->workspace();
         if (! LiveChat::validWorkspace($workspace)) {
             $this->error('  ✗ HIBIRA_LIVECHAT_WORKSPACE is not set.');
-            $this->line('    Copy the workspace ID (ws_…) from Settings › Widget on https://chat.hibira.io, or run php artisan hibira:live-chat --workspace=ws_…');
+            $this->line('    Copy the workspace ID (ws_…) from Settings › Widget on https://hibira.io/portal/live-chat/widget, or run php artisan hibira:live-chat --workspace=ws_…');
 
             return self::FAILURE;
         }
@@ -92,7 +92,7 @@ class LiveChatCommand extends Command
         $message = is_string($error) ? $error : (string) $response->body();
         $this->error("  ✗ $origin can't show the chat: ".trim($message));
         if (in_array($response->status(), [403, 404], true)) {
-            $this->line("    Add $origin under Settings › Widget › Sites on https://chat.hibira.io (and check the workspace ID).");
+            $this->line("    Add $origin under Settings › Widget › Sites on https://hibira.io/portal/live-chat/widget (and check the workspace ID).");
         }
 
         return self::FAILURE;
